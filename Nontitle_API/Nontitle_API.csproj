@@ -16,6 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\Nontitle.ServiceDefaults\Nontitle.ServiceDefaults.csproj" />
 	  <ProjectReference Include="..\Nontitle_Service\Nontitle_Service.csproj" />
 	</ItemGroup>
 

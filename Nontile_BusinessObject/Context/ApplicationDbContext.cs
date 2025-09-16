@@ -14,6 +14,32 @@ namespace Nontitle_BusinessObject.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationUser>(options =>
+            {
+                
+            });
+
+            builder.Entity<Category>(options =>
+            {
+                options.HasQueryFilter(x => !x.IsDeleted);
+            });
+
+            builder.Entity<OrderCheck>(options =>
+            {
+                options.HasQueryFilter(x => !x.IsDeleted);
+            });
+
+            builder.Entity<OrderCheckItem>(options =>
+            {
+                options.HasQueryFilter(x => !x.IsDeleted);
+            });
+
+            builder.Entity<Product>(options =>
+            {
+                options.HasQueryFilter(x => !x.IsDeleted);
+            });
+
             builder.HasDefaultSchema("nontitle");
         }
     }
