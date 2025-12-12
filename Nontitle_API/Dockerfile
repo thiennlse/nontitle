@@ -15,6 +15,10 @@ WORKDIR /src
 COPY ["Directory.Packages.props", "."]
 COPY ["Directory.Build.props", "."]
 COPY ["Nontitle_API/Nontitle_API.csproj", "Nontitle_API/"]
+COPY ["Nontitle.ServiceDefaults/Nontitle.ServiceDefaults.csproj", "Nontitle.ServiceDefaults/"]
+COPY ["Nontitle_Service/Nontitle_Service.csproj", "Nontitle_Service/"]
+COPY ["Nontitle_Repository/Nontitle_Repository.csproj", "Nontitle_Repository/"]
+COPY ["Nontile_BusinessObject/Nontitle_BusinessObject.csproj", "Nontile_BusinessObject/"]
 RUN dotnet restore "./Nontitle_API/Nontitle_API.csproj"
 COPY . .
 WORKDIR "/src/Nontitle_API"

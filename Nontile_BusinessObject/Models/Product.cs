@@ -11,5 +11,8 @@ public class Product : BaseEntity
     public float SellPricePerUnit { get; set; }
     public int ReturnRate { get; set; }
     public required string CategoryId { get; set; }
+
+
     public Category Category { get; set; } = default!;
+    public ICollection<ProductIngredient>? ProductIngredients { get; set; } = new List<ProductIngredient>();
 }
