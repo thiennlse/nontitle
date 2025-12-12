@@ -11,4 +11,3 @@ public interface IGenericRepository<T> where T : BaseEntity
     Task<T> UpdateAsync(T entity);
     Task<bool> DeleteAsync(T entity);
 }
-

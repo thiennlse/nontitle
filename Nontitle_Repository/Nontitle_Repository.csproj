@@ -10,9 +10,4 @@
     <ProjectReference Include="..\Nontile_BusinessObject\Nontitle_BusinessObject.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

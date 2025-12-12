@@ -4,7 +4,7 @@ IResourceBuilder<PostgresDatabaseResource> database = builder.AddPostgres("datab
     .WithPgAdmin()
     .WithDataVolume()
     .WithEnvironment("TZ", "Asia/Ho_Chi_Minh")
-    .AddDatabase("nontitle-db");
+    .AddDatabase("nontitle-db-rn64");
 
 builder.AddProject<Projects.Nontitle_API>("nontitle-api")
     .WithReference(database)

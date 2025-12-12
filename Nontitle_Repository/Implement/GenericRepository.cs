@@ -13,7 +13,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     protected readonly DbSet<T> _dbSet;
     private readonly IHttpContextAccessor _accessor;
 
-    public GenericRepository(ApplicationDbContext context, DbSet<T> dbSet, IHttpContextAccessor accessor)
+    public GenericRepository(ApplicationDbContext context, IHttpContextAccessor accessor)
     {
         _context = context;
         _dbSet = context.Set<T>();
