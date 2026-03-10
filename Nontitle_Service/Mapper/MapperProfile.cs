@@ -1,10 +1,11 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Nontitle_BusinessObject.DTO.Category;
 using Nontitle_BusinessObject.DTO.IngredientDto;
 using Nontitle_BusinessObject.DTO.OrderCheckDto;
 using Nontitle_BusinessObject.DTO.OrderCheckItemDto;
 using Nontitle_BusinessObject.DTO.ProductDto;
 using Nontitle_BusinessObject.DTO.StoreDto;
+using Nontitle_BusinessObject.DTO.StoreRoleDto;
 using Nontitle_BusinessObject.Models;
 
 namespace Nontitle_Service.MapperProfile;
@@ -39,9 +40,13 @@ public class MapperProfile : Profile
             .ReverseMap();
 
         CreateMap<Store, StoreRequestDto>().ReverseMap();
-        CreateMap<Store, StoreResponseDto>().
-            ForMember(dest => dest.StoreId, src => src.MapFrom(s => s.Id))
+        CreateMap<Store, StoreResponseDto>()
+            .ForMember(dest => dest.StoreId, src => src.MapFrom(s => s.Id))
+            .ReverseMap();
+
+        CreateMap<StoreRole, StoreRoleRequestDto>().ReverseMap();
+        CreateMap<StoreRole, StoreRoleResponseDto>()
+            .ForMember(dest => dest.Id, src => src.MapFrom(sr => sr.Id))
             .ReverseMap();
     }
 }
-

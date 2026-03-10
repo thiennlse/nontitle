@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Nontitle_BusinessObject.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class Init_1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -281,7 +281,7 @@ namespace Nontitle_BusinessObject.Migrations
                     Id = table.Column<string>(type: "text", nullable: false),
                     StoreId = table.Column<string>(type: "text", nullable: true),
                     Name = table.Column<string>(type: "text", nullable: true),
-                    Permission = table.Column<string>(type: "text", nullable: true),
+                    Permission = table.Column<List<string>>(type: "text[]", nullable: true),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     UpdatedBy = table.Column<string>(type: "text", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),

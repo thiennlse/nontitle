@@ -523,8 +523,8 @@ namespace Nontitle_BusinessObject.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<string>("Permission")
-                        .HasColumnType("text");
+                    b.PrimitiveCollection<List<string>>("Permission")
+                        .HasColumnType("text[]");
 
                     b.Property<string>("StoreId")
                         .HasColumnType("text");

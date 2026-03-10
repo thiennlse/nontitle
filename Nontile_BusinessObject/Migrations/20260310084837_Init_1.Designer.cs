@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Nontitle_BusinessObject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251124073313_Init")]
-    partial class Init
+    [Migration("20260310084837_Init_1")]
+    partial class Init_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -526,8 +526,8 @@ namespace Nontitle_BusinessObject.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<string>("Permission")
-                        .HasColumnType("text");
+                    b.PrimitiveCollection<List<string>>("Permission")
+                        .HasColumnType("text[]");
 
                     b.Property<string>("StoreId")
                         .HasColumnType("text");

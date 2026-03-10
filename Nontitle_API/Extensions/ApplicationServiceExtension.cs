@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -24,7 +24,7 @@ public static class ApplicationServiceExtension
     {
         services.AddDbContext<ApplicationDbContext>(context =>
         {
-            context.UseNpgsql(configurations.GetConnectionString("default"));
+            context.UseNpgsql(configurations.GetConnectionString("Default"));
         });
 
         services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -52,6 +52,10 @@ public static class ApplicationServiceExtension
         services.AddScoped<IIngredientService, IngredientService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IStoreService, StoreService>();
+        services.AddScoped<IProductService, ProductService>();
+        services.AddScoped<IOrderCheckService, OrderCheckService>();
+        services.AddScoped<IOrderCheckItemService, OrderCheckItemService>();
+        services.AddScoped<IStoreRoleService, StoreRoleService>();
         return services;
     }
 
@@ -178,4 +182,3 @@ public static class ApplicationServiceExtension
         return services;
     }
 }
-
